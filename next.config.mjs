@@ -3,8 +3,10 @@ const nextConfig = {
   // Enable standalone output for Docker
   output: 'standalone',
 
-  // Minification for production builds
+  // Minification and compression for production builds
   swcMinify: true,
+  poweredByHeader: false,
+  compress: true,
 
   // Avoid failing production builds on ESLint/TypeScript errors (temporary Netlify unblock)
   eslint: {
@@ -31,7 +33,8 @@ const nextConfig = {
       "connect-src 'self' https://www.google-analytics.com https://api.stripe.com",
       "frame-ancestors 'none'",
       "base-uri 'self'",
-      "form-action 'self'"
+      "form-action 'self'",
+      "upgrade-insecure-requests"
     ].join('; ');
 
     return [
