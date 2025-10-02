@@ -47,7 +47,7 @@ export function ServiceCardPresenter({
       )}>
         <div className="w-full lg:w-48 flex-shrink-0">
           <div className="relative aspect-video lg:aspect-square rounded-lg overflow-hidden bg-rose-powder/10 dark:bg-rose-950/20">
-            <Image src={getServiceImage(service)} alt={`...`} fill className="object-cover" priority={priority} />
+            <Image src={getServiceImage(service)} alt={service.name} fill className="object-cover" priority={priority} loading={priority ? undefined : 'lazy'} />
           </div>
         </div>
         <div className="flex-1 min-w-0">
@@ -92,7 +92,7 @@ export function ServiceCardPresenter({
       <CardHeader className="pb-4">
         {service.popular && <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-rose text-white shadow-rose z-10"><Star className="w-3 h-3 mr-1" /> Populaire</Badge>}
         <div className="relative aspect-video rounded-lg overflow-hidden mb-4 bg-rose-powder/10 dark:bg-rose-950/20">
-          <Image src={getServiceImage(service)} alt={`...`} fill className="object-cover" priority={priority} />
+          <Image src={getServiceImage(service)} alt={service.name} fill className="object-cover" priority={priority} loading={priority ? undefined : 'lazy'} />
         </div>
         <Link href={`/service/${service.id}`} className="group">
           <CardTitle className="font-playfair text-lg text-charcoal dark:text-cream group-hover:text-magenta">{service.name}</CardTitle>

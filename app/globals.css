@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Visible focus outline for keyboard users */
+:focus-visible {
+  outline: 2px solid #C73863; /* magenta brand */
+  outline-offset: 3px;
+}
+
+/* High-contrast mode helper class */
+.high-contrast * {
+  color: #000 !important;
+  background: #fff !important;
+  border-color: #000 !important;
+}
+
+/* Reduced motion helper */
+.reduce-motion * {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+/* Skip link for keyboard navigation */
+.skip-to-content {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: #C73863;
+  color: #fff;
+  padding: 8px 12px;
+  z-index: 1000;
+  border-radius: 6px;
+}
+.skip-to-content:focus {
+  left: 12px;
+  top: 12px;
+}
